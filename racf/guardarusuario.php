@@ -6,6 +6,7 @@ $codusuario=$GET["codusuario"];
 $nombre=$_GET["name"];
 $mail=$_GET["email"];
 $password=$_GET["password"];
+$estado=$_GET["estado"];
 echo $codusuario;
 
 if ($accion=="alta") {
@@ -17,8 +18,7 @@ if ($accion=="alta") {
 }
 
 if ($accion=="modificar") {
-	$codtrabajador=$_POST["codtrabajador"];
-	$query="UPDATE internalUsersTable SET intUserMail='$mail', intUserPass='$password'WHERE intUserName='$nombre'";
+	$query="UPDATE internalUsersTable SET intUserMail='$mail', intUserPass='$password', codstatus='$estado' WHERE intUserName='$nombre'";
 	$rs_query=mysqli_query($conexion,$query);
 	if ($rs_query) { $mensaje="Los datos del usuario han sido modificados correctamente"; }
 	$cabecera1="Settings >> Modificar Usuarios &gt;&gt; Modificar Usuarios ";
