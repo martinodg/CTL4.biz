@@ -2,11 +2,11 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' media='screen and (max-width: 700px)' href='../estilos/login.css' />
-    <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 959px)' href='../estilos/login.css' />
-    <link rel='stylesheet' media='screen and (min-width: 960px)' href='../estilos/login.css' />
-    <script type="text/javascript" src="../jquery/jquery331.js"></script>
-    <script type="text/javascript" src="../funciones/login.js"></script>
+    <link rel='stylesheet' media='screen and (max-width: 700px)' href='../../estilos/login.css' />
+    <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 959px)' href='../../estilos/login.css' />
+    <link rel='stylesheet' media='screen and (min-width: 960px)' href='../../estilos/login.css' />
+    <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+    <script type="text/javascript" src="../../funciones/login.js"></script>
     <script language="javascript">
         //get proceso code from Url hash on last page.
         var usuario = window.location.hash.substring(1);
@@ -208,7 +208,7 @@
             </div>
 
             <div id="botonBusqueda" align="right">
-                <button type="button" id="btnsubmit" onClick="modificausuario()" onMouseOver="style.cursor=cursor" disabled=""> <img src="../img/disco.svg" alt="Nuevo" /> <span>Guardar modificacion</span> </button>
+                <button type="button" id="btnsubmit" onClick="modificausuario()" onMouseOver="style.cursor=cursor" disabled=""> <img src="../../img/disco.svg" alt="Nuevo" /> <span>Guardar modificacion</span> </button>
 
             </div>
 

@@ -1,5 +1,5 @@
 <?
-include ("../conectar7.php");
+include ("../../conectar7.php");
 
 $accion=$_GET["accion"];
 $codusuario=$GET["codusuario"];

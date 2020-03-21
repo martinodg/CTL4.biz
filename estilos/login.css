@@ -1,6 +1,6 @@
 @font-face {
     font-family: "quicksandlight";
-    src: url('quicksand_book-webfont.woff2') format('woff2'), url("./font/quicksand_book-webfont.woff") format("woff");
+    src: url('./font/quicksand_book-webfont.woff2') format('woff2'), url("./font/quicksand_book-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -12,7 +12,7 @@
     float: left;
     width: 33.33%;
     padding: 10px;
-    height: 300px;
+    height: 150px;
     /* Should be removed. Only for demonstration */
 }
 
@@ -23,7 +23,6 @@
     height: 300px;
     /* Should be removed. Only for demonstration */
 }
-
 
 /* Clear floats after the columns */
 
@@ -448,3 +447,32 @@ input:checked+.slider:before {
     height: 20pt;
     background-color: #fcdddd;
 }
+.d-table {
+    min-width: 300px;
+    min-height: 300px;
+    background: lightgrey;
+    display: block;
+    width: 1px solid red;
+  }
+  
+  .d-table ul {
+    list-style-type: none;
+  }
+  
+  .d-column li {
+    padding: 0px;
+    display: inline-block;
+    border: 1px solid blue;
+    background: grey;
+    width: 50px;
+    height: 20px;
+  }
+  
+  .d-row li {
+    padding: 0px;
+    display: inline-block;
+    background: lightgrey;
+    border: 1px solid red;
+    width: 50px;
+    height: 20px;
+  }

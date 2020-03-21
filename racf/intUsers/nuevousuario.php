@@ -2,11 +2,11 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' media='screen and (max-width: 700px)' href='../estilos/login.css' />
-    <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 959px)' href='../estilos/login.css' />
-    <link rel='stylesheet' media='screen and (min-width: 960px)' href='../estilos/login.css' />
-    <script type="text/javascript" src="../jquery/jquery331.js"></script>
-    <script type="text/javascript" src="../funciones/login.js"></script>
+    <link rel='stylesheet' media='screen and (max-width: 700px)' href='../../estilos/login.css' />
+    <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 959px)' href='../../estilos/login.css' />
+    <link rel='stylesheet' media='screen and (min-width: 960px)' href='../../estilos/login.css' />
+    <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+    <script type="text/javascript" src="../../funciones/login.js"></script>
     <script language="javascript">
 
         function cancelar() {
@@ -43,7 +43,7 @@
 
 
 
-    <!link href="../estilos/menu2.css" type="text/css" rel="stylesheet">
+    <!link href="../../estilos/menu2.css" type="text/css" rel="stylesheet">
     <title>Registration form</title>
 </head>
 
@@ -105,7 +105,7 @@
             </div>
 
             <div id="botonBusqueda" align="right">
-                <button type="button" id="btnsubmit" onClick="creausuario()" onMouseOver="style.cursor=cursor" disabled=""> <img src="../img/nuevo.svg" alt="Nuevo" /> <span>Crear Nuevo Usuario</span> </button>
+                <button type="button" id="btnsubmit" onClick="creausuario()" onMouseOver="style.cursor=cursor" disabled=""> <img src="../../img/nuevo.svg" alt="Nuevo" /> <span>Crear Nuevo Usuario</span> </button>
 
             </div>
 

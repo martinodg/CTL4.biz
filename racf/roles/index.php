@@ -1,20 +1,20 @@
 <?php
 $language="spanish";
-$Busqueda="Busqueda de Usuarios";
+$Busqueda="Busqueda de Roles";
 
 if ($language<>"spanish"){$Busqueda="Search for Users";}
 ?>
 <html>
     <head>
 	
-	<title>Usuarios</title>
-	<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-    <link href="../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
-		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
-        <script type="text/javascript" src="../jquery/jquery331.js"></script>
-        <script type="text/javascript" src="../funciones/paginar.js"></script>
+	<title>roles</title>
+	<link href="../../estilos/estilos.css" type="text/css" rel="stylesheet">
+    <link href="../../calendario/calendar-blue.css" rel="stylesheet" type="text/css">
+		<script type="text/JavaScript" language="javascript" src="../../calendario/calendar.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../../calendario/lang/calendar-sp.js"></script>
+		<script type="text/JavaScript" language="javascript" src="../../calendario/calendar-setup.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+        <script type="text/javascript" src="../../funciones/paginar.js"></script>
        
         <script language="javascript">
           
@@ -24,14 +24,14 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
           function paginar(){
             //alert(document.getElementById("paginas").value);
             document.getElementById("iniciopagina").value=document.getElementById("paginas").value;
-            buscausuario();
+            buscarole();
           }
           //---------------------------------------------------------------------------------------------------         
           //modify proc function
           //---------------------------------------------------------------------------------------------------           
           //procs search fucnction
-          function buscausuario(){
-                                    $.get( "buscarUsuario.php" , { criterio1 : 'codstatus',
+          function buscarole(){
+                                    $.get( "buscarRole.php" , { criterio1 : 'codstatus',
                                                                     parametro1 : document.getElementById('param1').value,
                                                                     criterio2 : document.getElementById('crit2').value,
                                                                     parametro2 : document.getElementById('param2').value,
@@ -48,8 +48,8 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
                               }
           //---------------------------------------------------------------------------------------------------         
           //modify proc function modificar('.$row[0].')
-          function modificar(coduser) {
-                                        location.href="modificarusuario.php" + "#" +coduser;
+          function modificar(codrole) {
+                                        location.href="modificarRole.php" + "#" +codrole;
                                   }
           //---------------------------------------------------------------------------------------------------             
           //set mouse cursor for different browsers
@@ -74,7 +74,7 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
           $( document ).ready(function(){
             
                 //Load procs data
-                buscausuario();
+                buscarole();
                 //---------------------------------------------------------------------------------------------------   
                 //Add or remove calendar for cirt1
                 $('#crit2, #crit3').change(function(){
@@ -87,14 +87,14 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
                                                                          if ($(calendid).length == 0) {
                                                                                                             //Add it to the dom
                                                                                                             $(agregar).append("\
-                                                                                                            <img src='../img/calendario.svg' name='"+calend+"' width='16' height='16' border='0' id='"+calend+"' onMouseOver='this.style.cursor=&apos;pointer&apos;'>");
+                                                                                                            <img src='../../img/calendario.svg' name='"+calend+"' width='16' height='16' border='0' id='"+calend+"' onMouseOver='this.style.cursor=&apos;pointer&apos;'>");
                                                                                                             Calendar.setup(
 					                                                                                                        {
 					                                                                                                            inputField : campo,
 					                                                                                                            ifFormat   : "%Y-%m-%d",
                                                                                                                                 button     : calend,
                                                                                                                                 onUpdate    : function() {
-                                                                                                                                                         buscausuario();
+                                                                                                                                                         buscarole();
                                                                                                                                                         
                                                                                                                                                         }       
 					                                                                                                        }
@@ -104,15 +104,15 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
                                                                         }else{
                                                                                 $(calendid).detach();
                                                                                 $('#'+campo).val('');
-                                                                                buscausuario();
+                                                                                buscarole();
                                                                         }
                                              }
                                             )
                 ;
                 //---------------------------------------------------------------------------------------------------
                 //filter for procs search   
-                $('#param1, #param2').on("change", buscausuario);
-                $('#param2, #param3').on("input", buscausuario);
+                $('#param1, #param2').on("change", buscarole);
+                $('#param2, #param3').on("input", buscarole);
                 
                 //---------------------------------------------------------------------------------------------------
                 //when we press clean button
@@ -124,7 +124,7 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
                 //---------------------------------------------------------------------------------------------------
                 //when we press new button
                 $('#btnnuevo').click(function(){
-                                                    location.href="nuevousuario.php";
+                                                    location.href="nuevoRole.php";
                                                 }
                                     )
                 ;
@@ -173,9 +173,9 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
 							<td width="20%"> 
                                 <select id="crit2" name="2" class="comboMedio" >
                                     
-                                    <option value="intUserName">Nombre de Usuario</option>
-                                    <option value="intUserMail">Mail del Usuario</option>
-                                    <option value="id_intUser">Codigo de Usuario</option>
+                                    <option value="intUserName">Nombre de role</option>
+                                    <option value="intUserMail">Mail del role</option>
+                                    <option value="id_intUser">Codigo de role</option>
                                     
 
                                 </select>
@@ -191,9 +191,9 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
 							<td width="20%"> 
                                 <select id="crit3" name="3" class="comboMedio" >
                                 
-                                    <option value="intUserMail">Mail del Usuario</option>
-                                    <option value="id_intUser">Codigo de Usuario</option>
-                                    <option value="intUserName">Nombre de Usuario</option>
+                                    <option value="intUserMail">Mail del role</option>
+                                    <option value="id_intUser">Codigo de role</option>
+                                    <option value="intUserName">Nombre de role</option>
                                    
                                 </select>
                             </td>
@@ -207,14 +207,14 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
 					</table>
 			  </div>
 		 	  <div id="botonBusqueda">
-					<button type="button" id="btnlimpiar" onMouseOver="style.cursor=cursor"> <img src="../img/limpiar.svg" alt="limpiar" /> <span>Limpiar</span> </button>
-               		<button type="button" id="btnnuevo" onMouseOver="style.cursor=cursor"> <img src="../img/nuevo.svg" alt="nuevo" /> <span>Nuevo</span> </button>
-               		<button type="button" id="btnimprimir" onMouseOver="style.cursor=cursor"> <img src="../img/printer.svg" alt="Imprimir" /> <span>Imprimir</span> </button>
+					<button type="button" id="btnlimpiar" onMouseOver="style.cursor=cursor"> <img src="../../img/limpiar.svg" alt="limpiar" /> <span>Limpiar</span> </button>
+               		<button type="button" id="btnnuevo" onMouseOver="style.cursor=cursor"> <img src="../../img/nuevo.svg" alt="nuevo" /> <span>Nuevo</span> </button>
+               		<button type="button" id="btnimprimir" onMouseOver="style.cursor=cursor"> <img src="../../img/printer.svg" alt="Imprimir" /> <span>Imprimir</span> </button>
 			  </div>
 			  <div id="lineaResultado">
 			  <table class="fuente8" width="100%" cellspacing=0 cellpadding=3 border=0>
                 <tr>
-				<td width="50%" class="paginar" align="left">N de Usuarios encontrados <input id="filas" type="text" class="cajaPequena" NAME="filas" maxlength="5" readonly></td>
+				<td width="50%" class="paginar" align="left">N de roles encontrados <input id="filas" type="text" class="cajaPequena" NAME="filas" maxlength="5" readonly></td>
 				<td width="50%" class="paginar" align="right">Mostrados <select name="paginas" id="paginas" onChange="paginar()">
 		          </select></td>
                 </tr>

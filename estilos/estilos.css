@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "quicksandlight";
-    src: url('quicksand_book-webfont.woff2') format('woff2'), url("./font/quicksand_book-webfont.woff") format("woff");
+    src: url('./font/quicksand_book-webfont.woff2') format('woff2'), url("./font/quicksand_book-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }

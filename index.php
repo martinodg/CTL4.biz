@@ -261,11 +261,12 @@ if($_SESSION["id"]) {
                 <li>
                     <label for="hamburger-6">Configuracion +</label>
                     <a class="menu" href="#">Configuracion</a>
-                    <input type="checkbox" id="hamburger-6" />
+                    <input type="checkbox" id="hamburger-7" />
                     <ul class="dropdown">
                         <li><a href="./etiquetas/index.php" target="principal" id="etiquetas">Etiquetas</a></li>
                         <li><a href="./ubicaciones/index.php" target="principal" id="ubicaciones">Ubicaciones</a></li>
                         <li><a href="./embalajes/index.php" target="principal" id="embalajes">Embalajes</a></li>
+                        <li><a href="http://127.0.0.1:8082" target="_top" id="kanban">Kanban</a></li>
                         
                     </ul>
                 </li>

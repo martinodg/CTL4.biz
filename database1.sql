@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: database
--- Generation Time: Nov 24, 2019 at 02:39 PM
--- Server version: 10.3.14-MariaDB-1:10.3.14+maria~bionic
--- PHP Version: 7.2.14
+-- Generation Time: Mar 11, 2020 at 02:50 PM
+-- Server version: 10.4.11-MariaDB-1:10.4.11+maria~bionic
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `enDB`
+-- Database: `5346465f6a756c696a75373740676d61696c2e636f6d`
 --
 
 -- --------------------------------------------------------
@@ -39,11 +39,6 @@ CREATE TABLE `albalinea` (
   `dcto` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `albalinea`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -51,7 +46,7 @@ CREATE TABLE `albalinea` (
 --
 
 CREATE TABLE `albalineap` (
-  `codalbaran` varchar(20) NOT NULL DEFAULT '0',
+  `codalbaran` int(10) NOT NULL DEFAULT 0,
   `codproveedor` int(5) NOT NULL DEFAULT 0,
   `numlinea` int(4) NOT NULL,
   `codfamilia` int(3) DEFAULT NULL,
@@ -62,11 +57,7 @@ CREATE TABLE `albalineap` (
   `dcto` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `albalineap`
---
-
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `albalineaptmp`
@@ -83,10 +74,7 @@ CREATE TABLE `albalineaptmp` (
   `dcto` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `albalineaptmp`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `albalineatmp`
@@ -103,10 +91,7 @@ CREATE TABLE `albalineatmp` (
   `dcto` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `albalineatmp`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `albaranes`
@@ -123,29 +108,23 @@ CREATE TABLE `albaranes` (
   `borrado` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `albaranes`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `albaranesp`
 --
 
 CREATE TABLE `albaranesp` (
-  `codalbaran` varchar(20) NOT NULL DEFAULT '0',
+  `codalbaran` int(5) NOT NULL DEFAULT 0,
   `codproveedor` int(5) NOT NULL DEFAULT 0,
-  `codfactura` varchar(20) DEFAULT NULL,
+  `codfactura` int(20) DEFAULT NULL,
   `fecha` date NOT NULL DEFAULT '0000-00-00',
   `iva` tinyint(4) NOT NULL DEFAULT 0,
   `estado` varchar(1) DEFAULT '1',
   `totalalbaran` float NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `albaranesp`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `albaranesptmp`
@@ -183,9 +162,9 @@ CREATE TABLE `articulos` (
   `codproveedor2` int(5) NOT NULL,
   `descripcion_corta` varchar(30) NOT NULL,
   `codubicacion` int(3) NOT NULL,
-  `stock` int(10) NOT NULL,
+  `stock` decimal(6,2) NOT NULL,
   `codunidadmedida` int(5) NOT NULL,
-  `stock_minimo` int(8) NOT NULL,
+  `stock_minimo` decimal(6,2) NOT NULL,
   `codumstock_minimo` int(5) NOT NULL,
   `aviso_minimo` varchar(1) NOT NULL DEFAULT '0',
   `datos_producto` varchar(200) NOT NULL,
@@ -211,6 +190,7 @@ CREATE TABLE `articulos` (
 --
 
 
+
 --
 -- Table structure for table `artpro`
 --
@@ -222,10 +202,7 @@ CREATE TABLE `artpro` (
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `artpro`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `batch`
@@ -246,6 +223,10 @@ CREATE TABLE `batch` (
 --
 -- Dumping data for table `batch`
 --
+
+
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `clientes`
@@ -274,6 +255,9 @@ CREATE TABLE `clientes` (
 -- Dumping data for table `clientes`
 --
 
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `cobros`
 --
@@ -289,10 +273,7 @@ CREATE TABLE `cobros` (
   `observaciones` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Cobros de facturas a clientes';
 
---
--- Dumping data for table `cobros`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `company_data`
@@ -309,9 +290,7 @@ CREATE TABLE `company_data` (
   `zip_code` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
---
--- Dumping data for table `company_data`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `embalajes`
@@ -326,6 +305,8 @@ CREATE TABLE `embalajes` (
 --
 -- Dumping data for table `embalajes`
 --
+
+
 
 -- --------------------------------------------------------
 
@@ -355,6 +336,10 @@ CREATE TABLE `estaciones` (
 -- Dumping data for table `estaciones`
 --
 
+
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `estado`
 --
@@ -369,10 +354,10 @@ CREATE TABLE `estado` (
 --
 
 INSERT INTO `estado` (`codestado`, `estado`) VALUES
-(0, 'Inicializado'),
-(1, 'Finalizado'),
-(2, 'Descartado'),
-(4, 'Activado'),
+(1, 'inicializado'),
+(2, 'finalizado'),
+(3, 'descartado'),
+(4, 'activo'),
 (5, 'desactivado');
 
 -- --------------------------------------------------------
@@ -392,9 +377,7 @@ CREATE TABLE `factulinea` (
   `dcto` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='lineas de facturas a clientes';
 
---
--- Dumping data for table `factulinea`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `factulineap`
@@ -412,9 +395,7 @@ CREATE TABLE `factulineap` (
   `dcto` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='lineas de facturas de proveedores';
 
---
--- Dumping data for table `factulineap`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `factulineaptmp`
@@ -431,10 +412,7 @@ CREATE TABLE `factulineaptmp` (
   `dcto` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='lineas de facturas de proveedores temporal';
 
---
--- Dumping data for table `factulineaptmp`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `factulineatmp`
@@ -451,9 +429,7 @@ CREATE TABLE `factulineatmp` (
   `dcto` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Temporal de linea de facturas a clientes';
 
---
--- Dumping data for table `factulineatmp`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `facturas`
@@ -470,9 +446,7 @@ CREATE TABLE `facturas` (
   `borrado` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='facturas de ventas a clientes';
 
---
--- Dumping data for table `facturas`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `facturasp`
@@ -489,10 +463,7 @@ CREATE TABLE `facturasp` (
   `borrado` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='facturas de compras a proveedores';
 
---
--- Dumping data for table `facturasp`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `facturasptmp`
@@ -529,11 +500,10 @@ CREATE TABLE `familias` (
 --
 -- Dumping data for table `familias`
 --
-
 INSERT INTO `familias` (`codfamilia`, `nombre`, `borrado`) VALUES
-(1, 'Materias Primas', '0'),
-(2, 'Producto Intermedio', '0'),
-(3, 'Producto Final', '0');
+(1, 'Materia prima', '0'),
+(2, 'Producto intermedio', '0'),
+(3, 'Producto final', '0');
 
 -- --------------------------------------------------------
 
@@ -554,7 +524,7 @@ CREATE TABLE `formapago` (
 INSERT INTO `formapago` (`codformapago`, `nombrefp`, `borrado`) VALUES
 (1, 'Efectivo', '0'),
 (2, 'Tarjeta de Credito', '0'),
-(3, 'Pago Bancario', '0'),
+(3, 'Transaccion Bancaria', '0'),
 (4, 'Cheques', '0'),
 (5, 'Bitcoins', '1');
 
@@ -575,8 +545,7 @@ CREATE TABLE `impuestos` (
 -- Dumping data for table `impuestos`
 --
 
-INSERT INTO `impuestos` (`codimpuesto`, `nombre`, `valor`, `borrado`) VALUES
-(1, 'IVA', 7, '0');
+
 
 -- --------------------------------------------------------
 
@@ -595,9 +564,7 @@ CREATE TABLE `librodiario` (
   `total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Movimientos diarios';
 
---
--- Dumping data for table `librodiario`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `lote`
@@ -615,10 +582,6 @@ CREATE TABLE `lote` (
   `borrado` varchar(1) COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
---
--- Dumping data for table `lote`
---
-
 -- --------------------------------------------------------
 
 --
@@ -630,7 +593,7 @@ CREATE TABLE `metaprocesos` (
   `codarticulo` int(5) NOT NULL,
   `nombre` varchar(40) NOT NULL,
   `esbatch` int(1) NOT NULL,
-  `cantidad` int(5) NOT NULL,
+  `cantidad` decimal(6,2) NOT NULL,
   `codunidadmedida` int(5) NOT NULL,
   `codstatus` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
@@ -638,6 +601,10 @@ CREATE TABLE `metaprocesos` (
 --
 -- Dumping data for table `metaprocesos`
 --
+
+
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `metaprocesoslinea`
@@ -648,13 +615,16 @@ CREATE TABLE `metaprocesoslinea` (
   `codproceso` int(5) NOT NULL,
   `codlinea` int(5) NOT NULL,
   `codarticulo` int(5) NOT NULL,
-  `cantidad` int(10) NOT NULL,
+  `cantidad` decimal(6,2) NOT NULL,
   `codunidadmedida` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `metaprocesoslinea`
 --
+
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `pagos`
@@ -671,10 +641,7 @@ CREATE TABLE `pagos` (
   `observaciones` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Pagos de facturas a proveedores';
 
---
--- Dumping data for table `pagos`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `pais`
@@ -692,9 +659,9 @@ CREATE TABLE `pais` (
 --
 
 INSERT INTO `pais` (`codPais`, `lengua`, `nombrePais`, `borrado`) VALUES
-(1, 'Spanish', 'Argentina', '0'),
-(2, 'Spanish', 'Espana', '0'),
-(3, 'English', 'Estados Unidos', '0');
+(1, 'Espanol', 'Argentina', '0'),
+(2, 'Espanol', 'Espana', '0'),
+(3, 'Ingles', 'Estados Unidos de America', '0');
 
 -- --------------------------------------------------------
 
@@ -713,10 +680,7 @@ CREATE TABLE `presulinea` (
   `dcto` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `presulinea`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `presulineatmp`
@@ -733,10 +697,7 @@ CREATE TABLE `presulineatmp` (
   `dcto` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `presulineatmp`
---
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `presupuestos`
@@ -753,9 +714,7 @@ CREATE TABLE `presupuestos` (
   `borrado` varchar(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `presupuestos`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `presupuestostmp`
@@ -766,9 +725,7 @@ CREATE TABLE `presupuestostmp` (
   `fecha` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Temporal de albaranes para controlar acceso simultaneo';
 
---
--- Dumping data for table `presupuestostmp`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `procesos`
@@ -794,6 +751,9 @@ CREATE TABLE `procesos` (
 -- Dumping data for table `procesos`
 --
 
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `proclinea`
 --
@@ -803,7 +763,7 @@ CREATE TABLE `proclinea` (
   `codproceso` int(5) NOT NULL,
   `codlinea` int(5) NOT NULL,
   `codarticulo` int(5) NOT NULL,
-  `cantidad` int(5) NOT NULL,
+  `cantidad` decimal(6,2) NOT NULL,
   `codunidadmedida` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -811,6 +771,8 @@ CREATE TABLE `proclinea` (
 -- Dumping data for table `proclinea`
 --
 
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `proveedores`
@@ -837,6 +799,7 @@ CREATE TABLE `proveedores` (
 --
 -- Dumping data for table `proveedores`
 --
+
 
 
 --
@@ -1040,7 +1003,10 @@ CREATE TABLE `trabajadores` (
 
 --
 -- Dumping data for table `trabajadores`
+--
 
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `ubicaciones`
@@ -1057,6 +1023,9 @@ CREATE TABLE `ubicaciones` (
 --
 
 
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `unidadesmedidas`
 --
@@ -1071,11 +1040,15 @@ CREATE TABLE `unidadesmedidas` (
 --
 
 INSERT INTO `unidadesmedidas` (`codunidadmedida`, `nombre`) VALUES
-(1, 'Indefinido'),
-(2, 'gr.'),
-(3, 'lbs.'),
-(4, 'unidades'),
-(5, 'kg.');
+(0, 'No definido'),
+(1, 'gr.'),
+(2, 'libras.'),
+(3, 'unidades'),
+(4, 'kg.');
+
+--
+-- Indexes for dumped tables
+--
 
 --
 -- Indexes for table `albalinea`
@@ -1391,19 +1364,19 @@ ALTER TABLE `albaranestmp`
 -- AUTO_INCREMENT for table `articulos`
 --
 ALTER TABLE `articulos`
-  MODIFY `codarticulo` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `codarticulo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `batch`
 --
 ALTER TABLE `batch`
-  MODIFY `codbatch` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codbatch` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `codcliente` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codcliente` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `cobros`
@@ -1415,7 +1388,7 @@ ALTER TABLE `cobros`
 -- AUTO_INCREMENT for table `embalajes`
 --
 ALTER TABLE `embalajes`
-  MODIFY `codembalaje` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `codembalaje` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `entidades`
@@ -1427,7 +1400,7 @@ ALTER TABLE `entidades`
 -- AUTO_INCREMENT for table `estaciones`
 --
 ALTER TABLE `estaciones`
-  MODIFY `codestacion` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codestacion` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `estado`
@@ -1451,13 +1424,13 @@ ALTER TABLE `facturasptmp`
 -- AUTO_INCREMENT for table `facturastmp`
 --
 ALTER TABLE `facturastmp`
-  MODIFY `codfactura` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codfactura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `familias`
 --
 ALTER TABLE `familias`
-  MODIFY `codfamilia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `codfamilia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `formapago`
@@ -1469,7 +1442,7 @@ ALTER TABLE `formapago`
 -- AUTO_INCREMENT for table `impuestos`
 --
 ALTER TABLE `impuestos`
-  MODIFY `codimpuesto` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codimpuesto` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `librodiario`
@@ -1481,13 +1454,13 @@ ALTER TABLE `librodiario`
 -- AUTO_INCREMENT for table `metaprocesos`
 --
 ALTER TABLE `metaprocesos`
-  MODIFY `codproceso` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codproceso` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `metaprocesoslinea`
 --
 ALTER TABLE `metaprocesoslinea`
-  MODIFY `codrecord` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codrecord` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `pagos`
@@ -1517,13 +1490,13 @@ ALTER TABLE `presupuestostmp`
 -- AUTO_INCREMENT for table `proclinea`
 --
 ALTER TABLE `proclinea`
-  MODIFY `codproclinea` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codproclinea` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `codproveedor` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codproveedor` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `provincias`
@@ -1538,16 +1511,22 @@ ALTER TABLE `tabbackup`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tipoproceso`
+--
+ALTER TABLE `tipoproceso`
+  MODIFY `codtipo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `trabajadores`
 --
 ALTER TABLE `trabajadores`
-  MODIFY `codtrabajador` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `codtrabajador` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `ubicaciones`
 --
 ALTER TABLE `ubicaciones`
-  MODIFY `codubicacion` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `codubicacion` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `unidadesmedidas`
@@ -1555,3 +1534,7 @@ ALTER TABLE `ubicaciones`
 ALTER TABLE `unidadesmedidas`
   MODIFY `codunidadmedida` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
