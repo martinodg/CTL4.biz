@@ -7,29 +7,47 @@ $clave=$_POST["password"];
 session_start();
 $message="";
 if(count($_POST)>0) {
-    if(empty($companycode)){
-        $query_login="SELECT * FROM login_user WHERE user_name='".$usuario."' and password = '". $clave."';";
-    }else{
-       $base_datos_usuario="SELECT bdusuario";
-    }
-    $result = mysqli_query($conexion,$query_login);
+   
+    $query_DB="SELECT db_user, db_password, id_company FROM login_user WHERE master_user='".$usuario."' or id_company='".$companycode."';";
+    $result = mysqli_query($conexion,$query_DB);
 
     if (!$result) {
-        die('Query failed');
+        die('Query 1 failed');
     }else{
         $row  = mysqli_fetch_array($result);
         if(is_array($row)) {
-            $_SESSION["id"] = $row['id'];
-            $_SESSION["BaseDeDatos"] = $row['id_company'];
-            $_SESSION["Usuario"] = $row['user_name'];
-            $_SESSION["Password"] = $row['password'];
+            $BaseDeDatos = $row['id_company'];
+            $Usuario_DB = $row['db_user'];
+            $Password_DB = $row['db_password'];
+            
         } else {
-            $message = "Invalid Username or Password!";
+            $message = "Invalid Username or Comapany name!";
+        }
+    }
+    mysqli_close($conexion);
+   
+    $conexion2=mysqli_connect('database',$Usuario_DB,$Password_DB,$BaseDeDatos) or die("Error: El servidor no puede conectar con la base de datos");
+    $query_login="SELECT * FROM internalUsersTable WHERE user_name='".$usuario."' and password='".$clave."';";
+    $result_login = mysqli_query($conexion2,$query_login);
+    if (!$result_login) {
+        die('Query 2 failed');
+        echo $query_login;
+    }else{
+        $row_login  = mysqli_fetch_array($result_login);
+        if(is_array($row_login)) {
+            $_SESSION['BaseDeDatos'] = $BaseDeDatos;
+            $_SESSION['Usuario_DB'] = $Usuario_DB;
+            $_SESSION['Password_DB'] = $Password_DB;
+            $_SESSION['intUser'] = $row_login['user_name'];
+            $_SESSION['id'] = $row_login['id_intUser'];
+        } else {
+            $message = "Invalid Username or Comapany name!";
         }
     }
 
+
 }
-if(isset($_SESSION["id"])) {
+if(isset($_SESSION["intUser"])) {
     
     header("Location:../index.php");
     

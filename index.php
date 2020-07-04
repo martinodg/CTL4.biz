@@ -181,7 +181,7 @@ session_start();
 
 <body>
 <?php
-if($_SESSION["id"]) {
+if($_SESSION["intUser"]) {
 ?>
     <div id="header">
         <div id="icono"><img class="imgicon" src="./img/homeg.svg"></div>
