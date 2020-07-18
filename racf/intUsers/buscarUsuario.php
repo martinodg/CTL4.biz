@@ -23,7 +23,7 @@ include ("../../conectar7.php");
     if ($parametro1<>""){ $donde=$donde."internalUsersTable.".$criterio1." LIKE '".$parametro1."%' AND ";}
     if ($parametro2<>""){ $donde=$donde."internalUsersTable.".$criterio2." LIKE '".$parametro2."%' AND ";}
     if ($parametro3<>""){ $donde=$donde."internalUsersTable.".$criterio3." LIKE '".$parametro3."%' AND ";}
-    $consulta="SELECT internalUsersTable.id_intUser, internalUsersTable.intUserName, internalUsersTable.intUserMail, estado.estado, internalUsersTable.intUserPass, internalUsersTable.codstatus FROM internalUsersTable, estado WHERE ".$donde."internalUsersTable.borrado=0 ORDER BY internalUsersTable.intUserName LIMIT ".$paginainicio.",10;";
+    $consulta="SELECT internalUsersTable.id_intUser, internalUsersTable.intUser_name, internalUsersTable.user_name, estado.estado, internalUsersTable.password, internalUsersTable.codstatus FROM internalUsersTable, estado WHERE ".$donde."internalUsersTable.borrado=0 ORDER BY internalUsersTable.intUser_name LIMIT ".$paginainicio.",10;";
     //echo $consulta;
         
 	$rs_tabla = mysqli_query($conexion,$consulta);
