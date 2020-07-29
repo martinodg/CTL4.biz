@@ -22,6 +22,15 @@
     padding: 10px;
     height: 300px;
     /* Should be removed. Only for demonstration */
+    
+}
+
+.column3 {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 150px;
+    /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -139,7 +148,9 @@ nav ul ul li {
     border: 1px solid white;
 }
 
-
+.d-table ul li {
+    display: inline;
+}
 /*---------------------------------------------------*/
 
 button {
@@ -476,3 +487,4 @@ input:checked+.slider:before {
     width: 50px;
     height: 20px;
   }
+  

@@ -105,7 +105,7 @@
        
     <div id="cabeceraResultado" class="header"> 
     Detalles del role</div>
-            <div class="column" style="background-color:#eee;">
+            <div class="column3" style="background-color:#eee;">
                 <center>
                     <form name="frmUser" align="center">
                         <div class="message">
@@ -117,7 +117,7 @@
 
                 </center>
             </div>
-            <div class="column" style="background-color:#eee;">
+            <div class="column3" style="background-color:#eee;">
                 <center>
                 <br> <br>
                         <span id="nombre" class="loginText">Nombre de role:</span><br>
@@ -125,7 +125,7 @@
                     
                 </center>
             </div>
-            <div class="column" style="background-color:#eee;">
+            <div class="column3" style="background-color:#eee;">
                 <center>
                     <br> <br>
                     <div><span id="roleDesactivado" class="loginText">Desactivado </span><label class="switch"> <input type="checkbox" id="rActivo" name="rActivo" > <span class="slider round"></span> </label> <span id="roleActivo" class="loginText">Activo</span></div>
