@@ -50,6 +50,7 @@ include ("../../conectar7.php");
             $consultaCheckRecurso="SELECT resourcesToRolesTable.borrado FROM resourcesToRolesTable WHERE resourcesToRolesTable.id_role=$parametro1 AND resourcesToRolesTable.id_resource=$row[0];"; 
             $checkresult=mysqli_query($conexion,$consulta);
             $checkrow=mysqli_fetch_row($checkresult);
+            //pueba
             echo '<td><label class="switch"> <input type="checkbox" id="SWrecurso'.$row[0].'" name="'.$row[0].'" onclick="ABReso('.$row[0].')" > <span class="slider round"></span> </label></td>';
             echo '</tr>';
            
