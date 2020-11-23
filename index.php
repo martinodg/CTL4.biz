@@ -284,7 +284,7 @@ if($_SESSION["intUser"]) {
        
     </div>
     <div id="content">
-        <iframe src="central2.php" name="principal" title="principal" width="100%" height="1050px" frameborder=0 scrolling="no" style="margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;"></iframe>
+        <iframe src="central2.php" name="principal" title="principal" width="100%" height="1300px" frameborder=0 scrolling="no" style="margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 0px;"></iframe>
     </div>
     <div id="bottombar"></div>
     <?php

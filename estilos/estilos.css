@@ -173,6 +173,7 @@ button>span {
     top: 10%;
     left: 0%;
     width: 100%;
+    height: auto;
 }
 
 #cabeceraResultado {

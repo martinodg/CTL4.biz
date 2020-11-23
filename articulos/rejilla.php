@@ -19,7 +19,7 @@ if ($codproveedor > "0") { $where.=" AND (codproveedor1='$codproveedor' OR codpr
 if ($codubicacion > "0") { $where.=" AND codubicacion='$codubicacion'"; }
 if ($referencia <> "") { $where.=" AND referencia like '%".$referencia."%'"; }
 
-$where.=" ORDER BY codarticulo ASC";
+$where.=" ORDER BY descripcion ASC";
 $query_busqueda="SELECT count(*) as filas FROM articulos WHERE borrado=0 AND ".$where;
 $rs_busqueda=mysqli_query($conexion,$query_busqueda);
 $filas=mysqli_result($rs_busqueda,0,"filas");

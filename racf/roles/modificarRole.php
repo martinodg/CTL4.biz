@@ -79,10 +79,16 @@
                                          );
                                     
                               }
-        function ABReso(idSreso,id_role,action){
+        function ABSubReso(idSreso){
             //alert(idRole+action+id_intUser);
-            $.get( "ABReso.php" , { sreso : idSreso,
-                                    role : id_role,
+            //ABReso(idSreso,id_role,action)
+            if ($('#SWSubRecurso'+idSreso).prop('checked')){
+                action="agregar";
+            } else {
+                action="quitar";
+            }
+            $.get( "ABSubReso.php" , { sreso : idSreso,
+                                    role : role,
                                     accion: action
                                     },function ( data ) { 
                                                         $('#div_datos2').html( data );
@@ -90,11 +96,32 @@
                                                         }
                  );
         }
+        function ABReso(idReso){
+            //alert("activo recurso");
+            if ($('#SWrecurso'+idReso).prop('checked')){
+                $(".hrow"+idReso).show();
+                action="agregar";
+            } else {
+                $(".hrow"+idReso).hide(); 
+                action="quitar";
+            }
+            $.get( "ABReso.php" , { reso : idReso,
+                                    role : role,
+                                    accion: action
+                                    },function ( data ) { 
+                                                        $('#div_datos2').html( data );
+                                                        buscaSubResources(id_role);
+                                                        }
+                 );
 
+        }
 
         $(document).ready(function() {
             buscaSubResources(role);
+            
         });
+       
+            
     </script>
 
     <title>Registration form</title>

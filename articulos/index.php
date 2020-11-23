@@ -231,8 +231,8 @@ if ($cadena_busqueda<>"") {
 				<input type="hidden" id="cadena_busqueda" name="cadena_busqueda">
 			</form>
 				<div id="lineaResultado">
-					<iframe width="100%" height="250" id="frame_rejilla" name="frame_rejilla" frameborder="0">
-						<ilayer width="100%" height="250" id="frame_rejilla" name="frame_rejilla"></ilayer>
+					<iframe width="100%" height="300" id="frame_rejilla" name="frame_rejilla" frameborder="0">
+						<ilayer width="100%" height="300" id="frame_rejilla" name="frame_rejilla"></ilayer>
 					</iframe>
 				</div>
 			</div>

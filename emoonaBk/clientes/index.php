@@ -205,7 +205,7 @@ if ($cadena_busqueda<>"") {
 			</form>
 				<div id="lineaResultado">
 					<iframe width="100%" height="250" id="frame_rejilla" name="frame_rejilla" frameborder="0">
-						<ilayer width="100%" height="250" id="frame_rejilla" name="frame_rejilla"></ilayer>
+						<ilayer width="100%" height="300" id="frame_rejilla" name="frame_rejilla"></ilayer>
 					</iframe>
 					<iframe id="frame_datos" name="frame_datos" width="0" height="0" frameborder="0">
 					<ilayer width="0" height="0" id="frame_datos" name="frame_datos"></ilayer>

@@ -13,7 +13,7 @@ include ("../conectar7.php");
     
 
     
-	$consulta="SELECT articulos.codarticulo, familias.nombre, articulos.referencia, articulos.descripcion, articulos.stock FROM articulos, familias WHERE ".$donde."articulos.borrado=0";
+	$consulta="SELECT articulos.codarticulo, familias.nombre, articulos.referencia, articulos.descripcion, articulos.stock FROM articulos, familias WHERE ".$donde."articulos.borrado=0 ORDER BY articulos.descripcion;";
   /* echo $consulta; */
         
 	$rs_tabla = mysqli_query($conexion,$consulta);

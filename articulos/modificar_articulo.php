@@ -90,7 +90,7 @@ $( document ).ready(function(){
 						<td width="20%">Referencia</td>
 						<?php $referencia=mysqli_result($rs_query,0,"referencia");?>
 					      <td colspan="2"><input name="Areferencia" id="referencia" value="<?php echo mysqli_result($rs_query,0,"referencia")?>" maxlength="20" class="cajaGrande" type="text"></td>
-				          <td width="4%" rowspan="15" align="left" valign="top"><ul id="lista-errores"></ul></td>
+				          
 						</tr>
 						<?php
 						$familia=mysqli_result($rs_query,0,"codfamilia");
@@ -126,7 +126,7 @@ $( document ).ready(function(){
 					  ?>
 						<tr>
 							<td width="11%">Impuesto</td>
-							<td colspan="2"><select id="cboImpuestos" name="AcboImpuestos" class="comboMedio">
+							<td colspan="2"><select id="cboImpuestos" name="cboImpuestos" class="comboMedio">
 							
 								<option value="0">Seleccione un impuesto</option>
 								<?php
@@ -188,7 +188,7 @@ $( document ).ready(function(){
 					    </tr>
 						<tr>
 						  <td>Descripci&oacute;n corta</td>
-						  <td colspan="2"><input NAME="Adescripcion_corta" id="descripcion_corta" type="text" class="cajaGrande"  maxlength="30" value="<?php echo mysqli_result($rs_query,0,"descripcion_corta")?>"></td>
+						  <td colspan="2"><input NAME="descripcion_corta" id="descripcion_corta" type="text" class="cajaGrande"  maxlength="30" value="<?php echo mysqli_result($rs_query,0,"descripcion_corta")?>"></td>
 				      </tr>
 					  <?php
 					  	$codubicacion=mysqli_result($rs_query,0,"codubicacion");
@@ -262,7 +262,7 @@ $( document ).ready(function(){
 					  ?>
 						<tr>
 							<td>Embalaje</td>
-							<td colspan="2"><select id="cboEmbalaje" name="AcboEmbalaje" class="comboGrande">
+							<td colspan="2"><select id="cboEmbalaje" name="cboEmbalaje" class="comboGrande">
 							<option value="0">Todos los embalajes</option>
 								<?php
 								while ($contador < mysqli_num_rows($res_embalaje)) { 
@@ -346,8 +346,9 @@ $( document ).ready(function(){
 						</tr>
 					</table>
 			  </div>
+			  <div id="lista-errores"></div>
 				<div id="botonBusqueda">
-					<button type="button" id="btnaceptar" onClick="validar(formulario,true)" onMouseOver="style.cursor=cursor"> <img src="../img/ok.svg" alt="limpiar" /> <span>Acpetar</span> </button>
+					<button type="button" id="btnaceptar" onClick="validar(formulario,true)" onMouseOver="style.cursor=cursor"> <img src="../img/ok.svg" alt="Aceptar" /> <span>Acpetar</span> </button>
 					<button type="button" id="btnlimpiar" onClick="limpiar()" onMouseOver="style.cursor=cursor"> <img src="../img/limpiar.svg" alt="limpiar" /> <span>Limpiar</span> </button>
                		<button type="button" id="btncancelar" onClick="cancelar()" onMouseOver="style.cursor=cursor"> <img src="../img/borrar.svg" alt="nuevo" /> <span>Cancelar</span> </button>
 								
