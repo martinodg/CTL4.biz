@@ -20,8 +20,12 @@ $id_Sreso=$_GET["sreso"];
     }
     if ($accion == 'quitar') {
         /*$query="DELETE FROM rolesToUsersTable WHERE id_intUser = $id_role AND id_role = $id_Sreso";*/
-        $query="UPDATE subresourcesToRolesTable SET borrado='1' WHERE id_role = $id_role AND id_subresource = $id_Sreso";
-        $rs_query=mysqli_query($conexion,$query);
+        $verify="UPDATE subresourcesToRolesTable SET borrado='1' WHERE id_role = $id_role AND id_subresource = $id_Sreso";
+        $rs_verify=mysqli_query($conexion,$verify);
+        if (mysqli_affected_rows($conexion) == "0") {
+            $query="INSERT INTO subresourcesToRolesTable (id_subresource, id_role, borrado) VALUES ('$id_Sreso','$id_role','1')"; 
+            $rs_query=mysqli_query($conexion,$query);
+        }
         mysqli_close($conexion);
     }
 	

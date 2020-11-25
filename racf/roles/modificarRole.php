@@ -92,12 +92,12 @@
                                     accion: action
                                     },function ( data ) { 
                                                         $('#div_datos2').html( data );
-                                                        buscaSubResources(id_role);
+                                                        buscaSubResources(role);
                                                         }
                  );
         }
         function ABReso(idReso){
-            //alert("activo recurso");
+            //alert(role);
             if ($('#SWrecurso'+idReso).prop('checked')){
                 $(".hrow"+idReso).show();
                 action="agregar";
@@ -106,11 +106,11 @@
                 action="quitar";
             }
             $.get( "ABReso.php" , { reso : idReso,
-                                    role : role,
+                                    idrole : role,
                                     accion: action
                                     },function ( data ) { 
                                                         $('#div_datos2').html( data );
-                                                        buscaSubResources(id_role);
+                                                        buscaSubResources(role);
                                                         }
                  );
 
@@ -155,7 +155,7 @@
             <div class="column3" style="background-color:#eee;">
                 <center>
                     <br> <br>
-                    <div><span id="roleDesactivado" class="loginText">Desactivado </span><label class="switch"> <input type="checkbox" id="rActivo" name="rActivo" > <span class="slider round"></span> </label> <span id="roleActivo" class="loginText">Activo</span></div>
+                    <div><span id="roleDesactivado" class="loginText">Inactivo </span><label class="switch"> <input type="checkbox" id="rActivo" name="rActivo" > <span class="slider round"></span> </label> <span id="roleActivo" class="loginText">Activo</span></div>
 
                     <input type="hidden" id="language" name="language" value="0">
 

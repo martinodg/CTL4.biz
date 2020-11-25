@@ -31,7 +31,7 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
           //---------------------------------------------------------------------------------------------------           
           //procs search fucnction
           function buscarole(){
-                                    $.get( "buscarRole.php" , { criterio1 : 'codstatus',
+                                    $.get( "./buscarRole.php" , { criterio1 : 'codstatus',
                                                                     parametro1 : document.getElementById('param1').value,
                                                                     criterio2 : document.getElementById('crit2').value,
                                                                     parametro2 : document.getElementById('param2').value,

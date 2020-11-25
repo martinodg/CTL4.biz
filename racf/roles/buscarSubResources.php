@@ -48,22 +48,26 @@ include ("../../conectar7.php");
             echo '<tr class="resCategoria">';
             echo '<td>'.$row[1].'</td>';
             $consultaCheckRecurso="SELECT resourcesToRolesTable.borrado FROM resourcesToRolesTable WHERE resourcesToRolesTable.id_role=$parametro1 AND resourcesToRolesTable.id_resource=$row[0];"; 
+            //echo "<br>";
+            //echo $consultaCheckRecurso;
+            //echo "<br>";
             $checkresult=mysqli_query($conexion,$consultaCheckRecurso);
             $checkrow=mysqli_fetch_row($checkresult);
             $ischeck=$checkrow[0];
-            echo " recurso: ";
-            echo $row[0];
-            Echo " role: ";
-            echo $parametro1;
-            echo " Check: ";
-            echo $ischeck;
+            //echo " recurso: ";
+            //echo $row[0];
+            //Echo " role: ";
+            //echo $parametro1;
+            //echo " Check code: ";
+            //echo $ischeck;
             if ($ischeck=='1') { $check="";
                                 $hiden="hiden";
             } else {
                 $check="checked";
                 $hiden="";
             }
-            echo $check;
+            //echo " Check: ";
+            //echo $check;
             echo '<td><label class="switch"> <input type="checkbox" id="SWrecurso'.$row[0].'" name="'.$row[0].'" onclick="ABReso('.$row[0].')" '.$check.'> <span class="slider round"></span> </label></td>';
             echo '</tr>';
             
@@ -77,7 +81,31 @@ include ("../../conectar7.php");
               
                 echo '<tr class="hrow'.$row[0].' '.$fondolinea.' '.$hiden.'" >';
                 echo '<td>'.$row2[1].'</td>';
-                echo '<td><label class="switch" ><input type="checkbox" id="SWSubRecurso'.$row2[0].'" name="'.$row2[0].'" onclick="ABSubReso('.$row2[0].')" > <span class="slider round"></span> </label></td>';                
+                $consultaCheckSubRecurso="SELECT subresourcesToRolesTable.borrado FROM subresourcesToRolesTable WHERE subresourcesToRolesTable.id_role=$parametro1 AND subresourcesToRolesTable.id_subresource=$row2[0];"; 
+            //echo "<br>";
+            //echo $consultaCheckSubRecurso;
+            //echo "<br>";
+            $checkSubresult=mysqli_query($conexion,$consultaCheckSubRecurso);
+            $answerQuery= mysqli_num_rows($checkSubresult);
+            $checkrow2=mysqli_fetch_row($checkSubresult);
+            $ischeck2=$checkrow2[0];
+            //echo " subrecurso: ";
+            //echo $row2[0];
+            //Echo " role: ";
+            //echo $parametro1;
+            //echo " Check code: ";
+            //echo $ischeck2;
+            //echo " lineas de resultado query: ";
+            //echo $answerQuery;
+            if ($answerQuery < '1' || $ischeck2=='1') { $check2="";
+                               
+            } else {
+                $check2="checked";
+                
+            }
+            //echo " Check: ";
+            //echo $check2;
+                echo '<td><label class="switch" ><input type="checkbox" id="SWSubRecurso'.$row2[0].'" name="'.$row2[0].'" onclick="ABSubReso('.$row2[0].')" '.$check2.' > <span class="slider round"></span> </label></td>';                
                 echo '</tr>';
                 
         
