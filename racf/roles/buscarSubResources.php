@@ -48,13 +48,25 @@ include ("../../conectar7.php");
             echo '<tr class="resCategoria">';
             echo '<td>'.$row[1].'</td>';
             $consultaCheckRecurso="SELECT resourcesToRolesTable.borrado FROM resourcesToRolesTable WHERE resourcesToRolesTable.id_role=$parametro1 AND resourcesToRolesTable.id_resource=$row[0];"; 
-            $checkresult=mysqli_query($conexion,$consulta);
+            $checkresult=mysqli_query($conexion,$consultaCheckRecurso);
             $checkrow=mysqli_fetch_row($checkresult);
             $ischeck=$checkrow[0];
+            echo " recurso: ";
+            echo $row[0];
+            Echo " role: ";
+            echo $parametro1;
+            echo " Check: ";
             echo $ischeck;
-            echo '<td><label class="switch"> <input type="checkbox" id="SWrecurso'.$row[0].'" name="'.$row[0].'" onclick="ABReso('.$row[0].')" > <span class="slider round"></span> </label></td>';
+            if ($ischeck=='1') { $check="";
+                                $hiden="hiden";
+            } else {
+                $check="checked";
+                $hiden="";
+            }
+            echo $check;
+            echo '<td><label class="switch"> <input type="checkbox" id="SWrecurso'.$row[0].'" name="'.$row[0].'" onclick="ABReso('.$row[0].')" '.$check.'> <span class="slider round"></span> </label></td>';
             echo '</tr>';
-           
+            
             $consulta2="SELECT subResourceTable.id_sresource as id, subResourceTable.subResourceName as name FROM subResourceTable WHERE subResourceTable.id_resource=$row[0];";  
             $rs_tabla2 = mysqli_query($conexion,$consulta2);
             $nr_recursos2= mysqli_num_rows($rs_tabla2);
@@ -63,7 +75,7 @@ include ("../../conectar7.php");
                 $row2 = mysqli_fetch_row($rs_tabla2);
               
               
-                echo '<tr class="hrow'.$row[0].'" class="'.$fondolinea.'">';
+                echo '<tr class="hrow'.$row[0].' '.$fondolinea.' '.$hiden.'" >';
                 echo '<td>'.$row2[1].'</td>';
                 echo '<td><label class="switch" ><input type="checkbox" id="SWSubRecurso'.$row2[0].'" name="'.$row2[0].'" onclick="ABSubReso('.$row2[0].')" > <span class="slider round"></span> </label></td>';                
                 echo '</tr>';

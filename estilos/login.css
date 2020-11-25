@@ -492,4 +492,6 @@ input:checked+.slider:before {
     background: rgb(120, 131, 141);
     
   }
-  
+  .hiden {
+    display: none;
+}
