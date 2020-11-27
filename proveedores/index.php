@@ -33,10 +33,11 @@ if ($cadena_busqueda<>"") {
 	<head>
 		<title>Proveedores</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-        <script type="text/javascript" src="../jquery/jquery331.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+		<script type="text/javascript" src="/racf/verify.js"></script>
         
         <script language="javascript">
-       
+        verify('1','1');
  /* Ajax para completar comboBox cboProvincias basado en el pais elejido en comboBox cboPais */
         $( document ).ready(function(){
                 $('#cboPais').change(function(){

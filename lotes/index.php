@@ -16,9 +16,10 @@ if ($language<>"spanish"){$Busqueda="Search for lot";}
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
         <script type="text/javascript" src="../jquery/jquery331.js"></script>
         <script type="text/javascript" src="../funciones/paginar.js"></script>
-
-       
+		<script type="text/javascript" src="/racf/verify.js"></script>
+        
         <script language="javascript">
+        verify('2','8');
           //---------------------------------------------------------------------------------------------------           
 
             //this function setup pagination and reload 

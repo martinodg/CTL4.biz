@@ -87,11 +87,11 @@
             } else {
                 action="quitar";
             }
-            $.get( "ABSubReso.php" , { sreso : idSreso,
+            $.getJSON( "ABSubReso.php" , { sreso : idSreso,
                                     role : role,
                                     accion: action
                                     },function ( data ) { 
-                                                        $('#div_datos2').html( data );
+                                                        if (data.mensaje!=null) {alert(data.mensaje);}
                                                         buscaSubResources(role);
                                                         }
                  );
@@ -105,11 +105,11 @@
                 $(".hrow"+idReso).hide(); 
                 action="quitar";
             }
-            $.get( "ABReso.php" , { reso : idReso,
+            $.getJSON( "ABReso.php" , { reso : idReso,
                                     idrole : role,
                                     accion: action
                                     },function ( data ) { 
-                                                        $('#div_datos2').html( data );
+                                                        if (data.mensaje!=null) {alert(data.mensaje);}
                                                         buscaSubResources(role);
                                                         }
                  );

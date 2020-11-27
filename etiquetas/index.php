@@ -6,7 +6,11 @@ include ("../conectar7.php");
 	<head>
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<script language="javascript">
+		<script type="text/javascript" src="/jquery/jquery331.js"></script>
+		<script type="text/javascript" src="/racf/verify.js"></script>
+        
+        <script language="javascript">
+        verify('7','27');
 		
 		function ventanaArticulos(){
 			miPopup = window.open("ver_articulos.php","miwin","width=700,height=500,scrollbars=yes");

@@ -19,7 +19,11 @@ if ($cadena_busqueda<>"") {
 	<head>
 		<title>Familias</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<script language="javascript">
+		<script type="text/javascript" src="/jquery/jquery331.js"></script>
+		<script type="text/javascript" src="/racf/verify.js"></script>
+        
+        <script language="javascript">
+        verify('5','23');
 		
 		var cursor;
 		if (document.all) {

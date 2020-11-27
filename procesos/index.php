@@ -14,11 +14,14 @@ if ($language<>"spanish"){$Busqueda="Search for processes";}
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
-        <script type="text/javascript" src="../jquery/jquery331.js"></script>
         <script type="text/javascript" src="../funciones/paginar.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+		<script type="text/javascript" src="/racf/verify.js"></script>
+        
+        <script language="javascript">
+        verify('2','6');
 
        
-        <script language="javascript">
            //---------------------------------------------------------------------------------------------------           
           
           //this function setup pagination and reload 

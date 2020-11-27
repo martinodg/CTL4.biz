@@ -4,9 +4,12 @@
 
     <title>Lotes</title>
     <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="../jquery/jquery331.js"></script>
     <script type="text/javascript" src="../funciones/paginar.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+	<script type="text/javascript" src="/racf/verify.js"></script>
+        
     <script language="javascript">
+        verify('2','7');
         //---------------------------------------------------------------------------------------------------           
 
         //this function setup pagination and reload 
