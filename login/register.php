@@ -116,11 +116,11 @@ if ($conn2->multi_query($sql4)) {
         echo "error happend on internal user creation <br>" . $conn2->error."<br>";
         echo $sql5;
     }
-
-    /*echo"<script>
+    $conn2->close();
+    echo"<script>
         window.location = 'login.php';
     </script>";
-    exit;*/
+    exit;
 }else{
     //if company and mail exist send alert and back to register form
     if ($language=="0"){
