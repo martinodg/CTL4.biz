@@ -29,7 +29,7 @@ $executa = "$DirBase -h $Servidor -u $Usuario --password=$Password --opt --ignor
 system($executa, $resultado);
 
 
-if ($resultado) { echo "<H1>Error ejecutando comando:$executa </H1>\n"; } 
+if ($resultado) { echo "<H1>Error ejecutando comando: $executa. Con codigo de error: $resultado </H1>\n"; } 
 
 
 if ($resultado) {
