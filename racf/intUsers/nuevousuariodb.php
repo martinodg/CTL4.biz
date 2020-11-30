@@ -1,5 +1,5 @@
 <?
-include("config.php");
+require_once("config.php");
 
     echo "**********************************************************<br>";
     echo "Creando usuario<br>";

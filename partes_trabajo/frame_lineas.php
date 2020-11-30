@@ -20,7 +20,7 @@ function eliminar_linea(codalbarantmp,numlinea,importe)
 </script>
 <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 <?php 
-include ("../conectar.php");
+require_once("../conectar.php");
 $codalbarantmp=$_POST["codalbarantmp"];
 $retorno=0;
 if ($modif<>1) {

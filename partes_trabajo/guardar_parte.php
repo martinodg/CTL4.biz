@@ -1,6 +1,6 @@
 <?
-include ("../conectar.php");
-include ("../funciones/fechas.php");
+require_once("../conectar.php");
+require_once("../funciones/fechas.php");
 
 $accion=$_POST["accion"];
 if (!isset($accion)) { $accion=$_GET["accion"]; }

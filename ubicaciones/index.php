@@ -1,5 +1,8 @@
 <?php
-include ("../conectar7.php");
+require_once("../conectar7.php");
+$id_resource='7';
+$id_sresource='28';
+require_once("../racf/purePhpVerify.php");
 
 $cadena_busqueda=$_GET["cadena_busqueda"];
 
@@ -20,10 +23,10 @@ if ($cadena_busqueda<>"") {
 		<title>Familias</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="/jquery/jquery331.js"></script>
-		<script type="text/javascript" src="/racf/verify.js"></script>
+		 
         
         <script language="javascript">
-        verify('7','28');
+         
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER

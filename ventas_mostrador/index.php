@@ -1,5 +1,10 @@
 <?php 
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
+session_start();
+$id_resource='3';
+$id_sresource='10';
+require_once("../racf/purePhpVerify.php");
+
 
 $fechahoy=date("Y-m-d");
 $sel_fact="INSERT INTO facturastmp (codfactura,fecha) VALUE ('','$fechahoy')";
@@ -15,10 +20,10 @@ $codfacturatmp=mysqli_insert_id($conexion);
 		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
 		<script type="text/javascript" src="/jquery/jquery331.js"></script>
-		<script type="text/javascript" src="/racf/verify.js"></script>
+		 
         
         <script language="javascript">
-        verify('3','10');
+         
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER

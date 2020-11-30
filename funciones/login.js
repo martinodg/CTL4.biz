@@ -1,62 +1,6 @@
-//arrays with lang traslation
-var company_name = ["Company name:", "Compania:","Nazwa Firma:"];
-var nombre = ["your name:", "nombre del usuario:","Nazwa Uzytkownika"];
-var emailValidation = ["e-mail validation:", "validacion del email:","Weryficacja adresu"];
-var password = ["password:", "clave:", "haslo"];
-var passwordValidation = ["password validation:", "validacion de la clave:","Weryficacja Hasla"];
-var member = ["Already a member?", "Ya eres miembro?","Jestes juz czlonkiem"];
-var golo = ["Go to Login", "Ve a la pagina de acceso","przejdz do logowania"];
-var sub = ["Submit", "Envia","Zatwierdz"];
-var details = ["Enter Login Details", "Complete los datos de Acceso","Wprrowadz dane logowania"];
-var companyCode = ["Company code:", "Codigo de la compania:","kod frimowy"];
-var signin = ["Sign in Now!", "Inscribete ahora!","Spewam teraz"];
-var noMember = ["Not a member yet?", "Aun no eres miembro?","nie jestes jeszcze chlonkiem"];
-
-
-
 // After document is loaded:
 
 $(document).ready(function() {
-
-    //Set languages on load
-    var lang = localStorage.getItem('language');
-    if (lang == "") {
-        localStorage.setItem('language', '0');
-        $("#bandera_lengua").attr("src", "../img/english-language.svg");
-    }
-    if (lang == "1") {
-        $("#bandera_lengua").attr("src", "../img/spanish-language.svg");
-    }
-    if (lang == "2") {
-        $("#bandera_lengua").attr("src", "../img/polish-language.svg");
-    }
-    langchange(lang);
-
-    //change language
-    $("#espanol").click(function() {
-        $("#bandera_lengua").attr("src", "../img/spanish-language.svg");
-        $("#language").val("1");
-        localStorage.setItem('language', '1');
-        lang = localStorage.getItem('language');
-        //var lang = '1';
-        langchange(lang);
-    });
-    $("#english").click(function() {
-        $("#bandera_lengua").attr("src", "../img/english-language.svg");
-        $("#language").val("0");
-        localStorage.setItem('language', '0');
-        lang = localStorage.getItem('language');
-        //var lang = '0';
-        langchange(lang);
-    });
-    $("#polish").click(function() {
-        $("#bandera_lengua").attr("src", "../img/polish-language.svg");
-        $("#language").val("2");
-        localStorage.setItem('language', '2');
-        lang = localStorage.getItem('language');
-        //var lang = '1';
-        langchange(lang);
-    });
     
     // validate e-mail on input event
     $("#email-validation-field, #email-field").keyup(function() {
@@ -94,24 +38,7 @@ $(document).ready(function() {
 
 
 // Functions --------------------------------------------------------------------------------------------------
-//language change function
-function langchange(idioma) {
 
-    $("#companyName").text(company_name[idioma]);
-    $("#password").text(password[idioma]);
-    $("#passwordValidation").text(passwordValidation[idioma]);
-    $("#emailValidation").text(emailValidation[idioma]);
-    $("#nombre").text(nombre[idioma]);
-    $("#member").text(member[idioma]);
-    $("#golo").text(golo[idioma]);
-    $("#sub").text(sub[idioma]);
-    $("#details").text(details[idioma]);
-    $("#signin").text(signin[idioma]);
-    $("#companyCode").text(companyCode[idioma]);
-    $("#noMember").text(noMember[idioma]);
-
-
-}
 //enable/disable submit button
 function togglSub() {
     var inputpass = document.getElementById("password-field").value;
@@ -130,7 +57,6 @@ function valmail(){
     
     var inputemail = $("#email-field").val();
     var emailval =  $("#email-validation-field").val();
-    //alert(inputpass + "es igual a:?" + inputval);
     console.log(inputemail + "es igual a:?" + emailval);
     if (inputemail == emailval && emailval != "") {
         $(".email-validation-icon-wrapper").removeClass("passdistinta");
@@ -149,7 +75,6 @@ function valmail(){
 
 // validate pass function
 function valpass(){
-    //alert();
     var inputpass = document.getElementById("password-field").value;
     var inputval = document.getElementById("password-validation-field").value;
     console.log(inputpass + "es igual a:?" + inputval);
@@ -170,10 +95,10 @@ function valpass(){
 // check password strength
 function testPasswordStrength(value) {
     var strongRegex = new RegExp(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[=/\()%ยง!@#$%^&*])(?=.{8,})'
+            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[=/\()%ยง!@#$%^&*])(?=.{48,})'
         ),
         mediumRegex = new RegExp(
-            '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})'
+            '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{16,})'
         );
 
     if (strongRegex.test(value)) {

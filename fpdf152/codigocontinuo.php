@@ -1,7 +1,7 @@
 <?php
 define('FPDF_FONTPATH','font/');
 require('fpdf.php');
-include("../conectar.php");
+require_once("../conectar.php");
 //require('code39.php');
 
 $codalbaran=$_GET["codalbaran"];

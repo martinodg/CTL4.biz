@@ -21,8 +21,8 @@ function eliminar_linea(codalbarantmp,numlinea,importe)
 
 <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 <?php 
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
 $codalbarantmp=$_POST["codalbarantmp"];
 $retorno=0;
 if ($modif<>1) {

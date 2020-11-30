@@ -15,11 +15,11 @@ function pon_prefijo(pref,nombre) {
 }
 
 </script>
-<? include ("../conectar7.php"); 
-include ("../mysqli_result.php");
+<? require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
 
-include ("../conectar7.php"); 
-include ("../mysqli_result.php");
+require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
 $familia=$_POST["cmbfamilia"];
 $referencia=$_POST["referencia"];
 $descripcion=$_POST["descripcion"];

@@ -2,8 +2,11 @@
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+$id_resource='2';
+$id_sresource='4';
+require_once("../racf/purePhpVerify.php");
+require_once("../mysqli_result.php");
 
 $cadena_busqueda=$_GET["cadena_busqueda"];
 
@@ -32,10 +35,10 @@ if ($cadena_busqueda<>"") {
 		<title>Articulos</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="../../jquery/jquery331.js"></script>
-		<script type="text/javascript" src="/racf/verify.js"></script>
+		 
         
         <script language="javascript">
-        verify('2','4');
+         
 		
 		var cursor;
 		if (document.all) {

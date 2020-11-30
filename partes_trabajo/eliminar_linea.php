@@ -2,7 +2,7 @@
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar.php");
+require_once("../conectar.php");
 
 $codalbaran=$_GET["codalbarantmp"];
 $numlinea=$_GET["numlinea"];

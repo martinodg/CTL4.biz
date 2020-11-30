@@ -20,8 +20,8 @@ function eliminar_linea(codfacturatmp,numlinea,importe)
 </script>
 <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
 <?php 
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
 $codfacturatmp=$_POST["codfacturatmp"];
 $retorno=0;
 if ($modif<>1) {

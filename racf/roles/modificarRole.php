@@ -31,10 +31,9 @@
         function modificarole() {
             var status = $("#rActivo").prop('checked');
             if (status == true) {var codstatus="4"}else{var codstatus="5"}
-            //alert(codstatus);
             $.get( "guardarRole.php" , { accion : 'modificar',
                                             codigo : document.getElementById('code').value,
-                                            nombre : document.getElementById('name').value,
+                                            nombre : document.getElementById('role_name').value,
                                             estado : codstatus
                                         }, function ( data ) { 
                                                             $('#div_datos2').html( data );
@@ -52,17 +51,15 @@
                                                     tipoBusqueda: 'modificar'
                                                 },
                                                 function(data) {
-                                                                //alert(data.nombre);
                                                                 $('#code').val(data.codrole);
-                                                                $('#name').val(data.nombre);
+                                                                $('#role_name').val(data.nombre);
                                                                 var rActivo = data.codestado;
                                                                 if (rActivo == "4") {
                                                                     $('input[type="checkbox"]').attr('checked', true);
                                                                 } else {
                                                                     $('input[type="checkbox"]').attr('checked', false);
                                                                 }
-                                                                //$('#div_datos').html( data );
-                                                                //calculaPaginacion();
+                                                                
                                                                 }
                         );                        
         }
@@ -71,17 +68,14 @@
                                     $.get( "buscarSubResources.php" , { criterio1 : 'id_role',
                                                                     parametro1 : role,
                                                                     tipoBusqueda: 'listar'
-                                                                    //paginainicio : document.getElementById('iniciopagina').value
                                                               },function ( data ) { 
                                                                                         $('#div_datos').html( data );
-                                                                                        //calculaPaginacion();
+                                                                                       
                                                                                   }
                                          );
                                     
                               }
         function ABSubReso(idSreso){
-            //alert(idRole+action+id_intUser);
-            //ABReso(idSreso,id_role,action)
             if ($('#SWSubRecurso'+idSreso).prop('checked')){
                 action="agregar";
             } else {
@@ -97,7 +91,6 @@
                  );
         }
         function ABReso(idReso){
-            //alert(role);
             if ($('#SWrecurso'+idReso).prop('checked')){
                 $(".hrow"+idReso).show();
                 action="agregar";
@@ -147,8 +140,8 @@
             <div class="column3" style="background-color:#eee;">
                 <center>
                 <br> <br>
-                        <span id="nombre" class="loginText">Nombre de role:</span><br>
-                        <input class="input-wrapper" type="text" id="name" name="name" >
+                        <span id="nombreDelRole" class="loginText">Nombre de role:</span><br>
+                        <input class="input-wrapper" type="text" id="role_name" name="name" >
                     
                 </center>
             </div>

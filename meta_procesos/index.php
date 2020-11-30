@@ -1,7 +1,11 @@
-
 <?php
+session_start();
+$id_resource='2';
+$id_sresource='5';
+require_once("../racf/purePhpVerify.php");
 $language="spanish";
 $Busqueda="Busqueda de meta procesos";
+
 
 if ($language<>"spanish"){$Busqueda="Search for processes";}
 ?>
@@ -15,10 +19,10 @@ if ($language<>"spanish"){$Busqueda="Search for processes";}
 		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
         <script type="text/javascript" src="../../jquery/jquery331.js"></script>
-		<script type="text/javascript" src="/racf/verify.js"></script>
+		 
         <script type="text/javascript" src="../funciones/paginar.js"></script>
         <script language="javascript">
-        verify('2','5');    
+             
         
        
         

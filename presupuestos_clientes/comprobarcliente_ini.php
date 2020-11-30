@@ -18,7 +18,7 @@ function limpiar() {
 }
 
 </script>
-<? include ("../conectar.php"); ?>
+<? require_once("../conectar.php"); ?>
 <body>
 <?
 	$codcliente=$_GET["codcliente"];

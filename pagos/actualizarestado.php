@@ -5,7 +5,7 @@ header('Pragma: no-cache');
 <html>
 <head>
 </head>
-<? include ("../conectar7.php"); ?>
+<? require_once("../conectar7.php"); ?>
 <body>
 <?
 	$estado=$_GET["estado"];

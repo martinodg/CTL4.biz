@@ -8,8 +8,8 @@ $empresa=$_POST["cmbempresa"];
 if ($empresa==0) { include("comunes.php"); }
 if ($empresa==1) { include("comunes2.php"); }
 
-include ("../conectar7.php"); 
-include ("../utiles/fecha_hispana.php");
+require_once("../conectar7.php"); 
+require_once("../utiles/fecha_hispana.php");
 
 $pdf=new PDF();
 $pdf->Open();

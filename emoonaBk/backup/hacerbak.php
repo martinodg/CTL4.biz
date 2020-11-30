@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
 $hoy=date("d/m/Y");
 $hora=date("H:i:s");
 ?>

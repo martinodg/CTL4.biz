@@ -16,8 +16,8 @@ function pon_prefijo(pref,nombre,nif) {
 }
 
 </script>
-<? include ("../conectar7.php"); ?>
-include ("../mysqli_result.php");
+<? require_once("../conectar7.php"); ?>
+require_once("../mysqli_result.php");
 <body>
 <?
 	$codcliente=$_GET["codcliente"];

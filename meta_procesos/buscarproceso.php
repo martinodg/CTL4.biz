@@ -1,5 +1,5 @@
 <?php
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
  
 if($_POST) {
 	$page = $_POST['page']; // Current page number

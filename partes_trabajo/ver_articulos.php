@@ -45,7 +45,7 @@ body {
 }
 -->
 </style></head>
-<? include ("../conectar.php"); ?>
+<? require_once("../conectar.php"); ?>
 <body onLoad="buscar()">
 <form name="form1" id="form1" method="post" action="frame_articulos.php" target="frame_resultado" onSubmit="buscar()">	
  <div id="frmBusqueda2">

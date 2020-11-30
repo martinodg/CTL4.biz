@@ -1,6 +1,6 @@
 <?php
-include ("../conectar.php");
-include ("../funciones/fechas.php");
+require_once("../conectar.php");
+require_once("../funciones/fechas.php");
 
 $codtrabajo=$_GET["codtrabajo"];
 $sel_parte="SELECT * FROM partestrabajo WHERE codtrabajo='$codtrabajo'";

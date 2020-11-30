@@ -2,7 +2,7 @@
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar7.php");
+require_once("../conectar7.php");
 
 $codfactura=$_GET["codfacturatmp"];
 $numlinea=$_GET["numlinea"];

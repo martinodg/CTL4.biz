@@ -2,10 +2,10 @@
 
 define('FPDF_FONTPATH','font/');
 require('mysqli_table.php');
-include("comunes.php");
-include ("../conectar7.php");
-include ("../mysqli_result.php");
-include ("../funciones/fechas.php"); 
+require_once("comunes.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
+require_once("../funciones/fechas.php"); 
 
 $pdf=new PDF();
 $pdf->Open();
@@ -14,7 +14,7 @@ $pdf->AddPage();
 $pdf->Ln(10);
 
 
-include ("../conectar7.php");
+require_once("../conectar7.php");
   
 $codfactura=$_GET["codfactura"];
 $codproveedor=$_GET["codproveedor"];

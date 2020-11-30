@@ -2,8 +2,8 @@
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
  ?>
 <html>
 	<head>

@@ -1,6 +1,6 @@
 <?
-include ("../conectar.php");
-include ("../funciones/fechas.php");
+require_once("../conectar.php");
+require_once("../funciones/fechas.php");
 
 	$codtrabajo=$_GET["codtrabajo"];
 	$query="DELETE FROM partestrabajo WHERE codtrabajo='$codtrabajo'";

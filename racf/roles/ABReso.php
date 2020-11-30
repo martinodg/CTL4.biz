@@ -1,5 +1,5 @@
 <?
-include ("../../conectar7.php");
+require_once("../../conectar7.php");
 
 $accion=$_GET["accion"];
 $id_role=$_GET["idrole"];

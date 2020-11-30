@@ -1,7 +1,7 @@
 <?php
-include ("../conectar7.php");
-include ("../mysqli_result.php");
-include ("../funciones/fechas.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
+require_once("../funciones/fechas.php");
 $hoy=date("d/m/Y");
 
 if ($_POST["accion"]=="") { $accion=$_GET["accion"]; } else { $accion=$_POST["accion"]; }

@@ -19,8 +19,8 @@ function pon_prefijo(codfamilia,pref,nombre,precio) {
 }
 
 </script>
-<? include ("../conectar7.php"); 
-include ("../mysqli_result.php");
+<? require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
 $familia=$_POST["cmbfamilia"];
 $referencia=$_POST["referencia"];
 $descripcion=$_POST["descripcion"];
