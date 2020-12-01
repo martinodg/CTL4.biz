@@ -1,6 +1,6 @@
 <?
-include ("../conectar.php");
-include ("../funciones/fechas.php");
+require_once("../conectar.php");
+require_once("../funciones/fechas.php");
 
 $codpresupuesto=$_GET["codpresupuesto"];
 $cadena_busqueda=$_GET["cadena_busqueda"];

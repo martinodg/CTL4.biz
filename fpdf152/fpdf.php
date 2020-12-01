@@ -474,7 +474,7 @@ function AddFont($family,$style='',$file='')
 		$file=str_replace(' ','',$family).strtolower($style).'.php';
 	if(defined('FPDF_FONTPATH'))
 		$file=FPDF_FONTPATH.$file;
-	include($file);
+	require_once($file);
 	if(!isset($name))
 		$this->Error('Could not include font definition file');
 	$i=count($this->fonts)+1;
@@ -549,7 +549,7 @@ function SetFont($family,$style='',$size=0)
 				$file.='.php';
 				if(defined('FPDF_FONTPATH'))
 					$file=FPDF_FONTPATH.$file;
-				include($file);
+				require_once($file);
 				if(!isset($fpdf_charwidths[$fontkey]))
 					$this->Error('Could not include font metric file');
 			}

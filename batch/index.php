@@ -1,12 +1,20 @@
+<?
+$id_resource='2';
+$id_sresource='7';
+require_once("../racf/purePhpVerify.php");
+?>
 <html>
 
 <head>
 
     <title>Lotes</title>
     <link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="../jquery/jquery331.js"></script>
     <script type="text/javascript" src="../funciones/paginar.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+	 
+        
     <script language="javascript">
+         
         //---------------------------------------------------------------------------------------------------           
 
         //this function setup pagination and reload 

@@ -1,6 +1,6 @@
 <? 
-include ("../conectar7.php");
-include ("../funciones/fechas.php");  
+require_once("../conectar7.php");
+require_once("../funciones/fechas.php");  
 
 $codfactura=$_POST["codfactura"];
 $codcliente=$_POST["codcliente"];

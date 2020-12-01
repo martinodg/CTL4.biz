@@ -1,7 +1,7 @@
 <?php 
-include ("../conectar7.php"); 
-include ("../mysqli_result.php");
-include ("../funciones/fechas.php"); 
+require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
+require_once("../funciones/fechas.php"); 
 
 $codalbaran=$_GET["codalbaran"];
 $sel_alb="SELECT * FROM albaranes WHERE codalbaran='$codalbaran'";

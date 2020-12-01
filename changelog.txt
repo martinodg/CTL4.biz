@@ -4,7 +4,7 @@ Add pais as AJAX to Provedores.php                    MADG          18-02-2019
 add pais as AJAX to Nuevo_Proveedor.php               MADG          18-02-2019
 create selprovincias7.php                             MADG          17.02.2019
 replace conectar7.php by conectar7.php php7 compatible MADG          17.02.2019
-include ("../mysqli_result.php");
+require_once("../mysqli_result.php");
 repalce Nuevo_Proveedor.php by Nuevo_Proveedor7.php   MADG          19.02.2019
 create mysqli_result.php with function to workaround 
     php7 issue for mysqli_result support               MADG          17.02.2019

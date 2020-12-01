@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
 
 $fechahoy=date("Y-m-d");
 $sel_albaran="INSERT INTO facturasptmp (codfactura,fecha) VALUE ('','$fechahoy')";

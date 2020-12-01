@@ -1,5 +1,5 @@
 <?php
-include ("../conectar.php");
+require_once("../conectar.php");
 
 $fechahoy=date("Y-m-d");
 #$sel_albaran="INSERT INTO albaranestmp (codalbaran,fecha) VALUE ('','$fechahoy')";

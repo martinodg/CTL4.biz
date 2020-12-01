@@ -3,9 +3,9 @@
 
 define('FPDF_FONTPATH','font/');
 require('mysqli_table.php');
-include("comunes.php");
-include ("../conectar.php");
-include ("../funciones/fechas.php"); 
+require_once("comunes.php");
+require_once("../conectar.php");
+require_once("../funciones/fechas.php"); 
 
 $pdf=new PDF();
 $pdf->Open();
@@ -14,7 +14,7 @@ $pdf->AddPage();
 $pdf->Ln(10);
 
 
-include ("../conectar.php");
+require_once("../conectar.php");
   
 $codalbaran=$_GET["codalbaran"];
 $codproveedor=$_GET["codproveedor"];

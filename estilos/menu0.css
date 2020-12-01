@@ -173,3 +173,6 @@ body {
 #page-nav ul:hover {
     background: rgb(211, 94, 94):
 }
+.hiden {
+    display: none;
+}

@@ -1,6 +1,6 @@
 <?php
-include ("../conectar7.php"); 
-include ("../mysqli_result.php"); 
+require_once("../conectar7.php"); 
+require_once("../mysqli_result.php"); 
 
     $codproceso=$_GET["codmproceso"];
     $nombreproceso=$_GET["nombremproceso"];

@@ -34,7 +34,7 @@ body {
 }
 -->
 </style></head>
-<? include ("../conectar.php"); ?>
+<? require_once("../conectar.php"); ?>
 <body onLoad="buscar()">
 <form name="form1" id="form1" method="post" action="frame_trabajadores.php" target="frame_resultado" onSubmit="buscar()">
   <table width="95%" id="tabla_resultado" name="tabla_resultado" style="display:none" align="center">

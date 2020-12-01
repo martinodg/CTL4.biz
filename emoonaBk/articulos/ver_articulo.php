@@ -2,11 +2,11 @@
 header('Cache-Control: no-cache');
 header('Pragma: no-cache'); 
 
-include ("../conectar7.php"); 
-include ("../mysqli_result.php");
-include ("../funciones/fechas.php"); 
+require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
+require_once("../funciones/fechas.php"); 
 
-include("../barcode/barcode.php");
+require_once("../barcode/barcode.php");
 
 $codarticulo=$_GET["codarticulo"];
 $cadena_busqueda=$_GET["cadena_busqueda"];

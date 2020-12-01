@@ -1,5 +1,8 @@
 <?php
-include ("../conectar7.php");
+require_once("../conectar7.php");
+$id_resource='6';
+$id_sresource='26';
+require_once("../racf/purePhpVerify.php");
 
 $cadena_busqueda=$_GET["cadena_busqueda"];
 
@@ -24,7 +27,11 @@ if ($cadena_busqueda<>"") {
 	<head>
 		<title>Trabajadores</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<script language="javascript">
+		<script type="text/javascript" src="/jquery/jquery331.js"></script>
+		 
+        
+        <script language="javascript">
+         
 
 		var cursor;
 		if (document.all) {

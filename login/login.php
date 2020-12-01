@@ -1,5 +1,5 @@
 <?php
-include("../conectar.php"); 
+require_once("../conectar.php"); 
 $companycode=$_POST["company_code"];
 $usuario=$_POST["user_name"];
 $clave=$_POST["password"];
@@ -61,6 +61,8 @@ if(isset($_SESSION["intUser"])) {
     <link rel='stylesheet' media='screen and (min-width: 960px)' href='../estilos/login.css' />
     <script type="text/javascript" src="../jquery/jquery331.js"></script>
     <script type="text/javascript" src="../funciones/login.js"></script>
+    <script type="text/javascript" src="../funciones/changelanguage.js"></script>
+ 
     
     
 <title>User Login</title>
@@ -74,6 +76,7 @@ if(isset($_SESSION["intUser"])) {
                     <ul>
                         <li><a class="lang" id="english" href="#">English</a></li>
                         <li><a class="lang" id="espanol" href="#">Espanol</a></li>
+                        <li><a class="lang" id="polish" href="#">Polski</a></li>
                     </ul>
 
                 </li>

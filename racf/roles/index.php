@@ -1,6 +1,10 @@
 <?php
 $language="spanish";
 $Busqueda="Busqueda de Roles";
+$id_resource='8';
+$id_sresource='31';
+require_once("../../conectar7.php");
+require_once("../purePhpVerify.php");
 
 if ($language<>"spanish"){$Busqueda="Search for Users";}
 ?>
@@ -15,8 +19,10 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
 		<script type="text/JavaScript" language="javascript" src="../../calendario/calendar-setup.js"></script>
         <script type="text/javascript" src="../../jquery/jquery331.js"></script>
         <script type="text/javascript" src="../../funciones/paginar.js"></script>
-       
+		 
+        
         <script language="javascript">
+         
           
          //---------------------------------------------------------------------------------------------------           
           
@@ -31,7 +37,7 @@ if ($language<>"spanish"){$Busqueda="Search for Users";}
           //---------------------------------------------------------------------------------------------------           
           //procs search fucnction
           function buscarole(){
-                                    $.get( "buscarRole.php" , { criterio1 : 'codstatus',
+                                    $.get( "./buscarRole.php" , { criterio1 : 'codstatus',
                                                                     parametro1 : document.getElementById('param1').value,
                                                                     criterio2 : document.getElementById('crit2').value,
                                                                     parametro2 : document.getElementById('param2').value,

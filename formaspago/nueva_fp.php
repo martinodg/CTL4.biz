@@ -1,4 +1,4 @@
-<?php include ("../conectar7.php"); ?>
+<?php require_once("../conectar7.php"); ?>
 <html>
 	<head>
 		<title>Principal</title>

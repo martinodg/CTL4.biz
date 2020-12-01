@@ -55,8 +55,8 @@ function enviar() {
 }
 </script>
 </head>
-<? include ("../conectar7.php"); 
-include ("../mysqli_result.php");
+<? require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
 
 $codfactura=$_GET["codfactura"];
 $codcliente=$_GET["codcliente"];

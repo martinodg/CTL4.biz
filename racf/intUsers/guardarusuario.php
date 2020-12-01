@@ -1,5 +1,5 @@
 <?
-include ("../../conectar7.php");
+require_once("../../conectar7.php");
 
 $accion=$_GET["accion"];
 $codusuario=$GET["codusuario"];
@@ -18,7 +18,7 @@ if ($accion=="alta") {
 }
 
 if ($accion=="modificar") {
-	$query="UPDATE internalUsersTable SET intUserMail='$mail', intUserPass='$password', codstatus='$estado' WHERE intUserName='$nombre'";
+	$query="UPDATE internalUsersTable SET user_name='$mail', password='$password', codstatus='$estado' WHERE intUser_name='$nombre'";
 	$rs_query=mysqli_query($conexion,$query);
 	if ($rs_query) { $mensaje="Los datos del usuario han sido modificados correctamente"; }
 	$cabecera1="Settings >> Modificar Usuarios &gt;&gt; Modificar Usuarios ";

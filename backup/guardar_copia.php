@@ -1,7 +1,7 @@
 <?
-include ("../conectar7.php"); 
-include ("../mysqli_result.php");
-include ("../funciones/fechas.php");
+require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
+require_once("../funciones/fechas.php");
 
 $denominacion=$_POST["Adenominacion"];
 $fecha=$_POST["fecha"];
@@ -29,7 +29,7 @@ $executa = "$DirBase -h $Servidor -u $Usuario --password=$Password --opt --ignor
 system($executa, $resultado);
 
 
-if ($resultado) { echo "<H1>Error ejecutando comando:$executa </H1>\n"; } 
+if ($resultado) { echo "<H1>Error ejecutando comando: $executa. Con codigo de error: $resultado </H1>\n"; } 
 
 
 if ($resultado) {

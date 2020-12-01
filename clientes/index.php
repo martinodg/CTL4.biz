@@ -1,7 +1,9 @@
 <?php
-include ("../conectar7.php");
-include ("../mysqli_result.php");
-
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
+$id_resource='1';
+$id_sresource='2';
+require_once("../racf/purePhpVerify.php");
 $cadena_busqueda=$_GET["cadena_busqueda"];
 
 if (!isset($cadena_busqueda)) { $cadena_busqueda=""; } else { $cadena_busqueda=str_replace("",",",$cadena_busqueda); }
@@ -28,8 +30,10 @@ if ($cadena_busqueda<>"") {
 	<head>
 		<title>Clientes</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="../../jquery/jquery331.js"></script>
+		<!script type="text/javascript" src="/racf/verify.js"><!/script>
 		<script language="javascript">
-		
+		// 
 		var cursor;
 		if (document.all) {
 		// Está utilizando EXPLORER

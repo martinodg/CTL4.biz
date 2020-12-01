@@ -1,6 +1,9 @@
 <?php
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
+$id_resource='1';
+$id_sresource='1';
+require_once("../racf/purePhpVerify.php");
 
 $cadena_busqueda=$_GET["cadena_busqueda"];
 
@@ -33,10 +36,11 @@ if ($cadena_busqueda<>"") {
 	<head>
 		<title>Proveedores</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-        <script type="text/javascript" src="../jquery/jquery331.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+		 
         
         <script language="javascript">
-       
+         
  /* Ajax para completar comboBox cboProvincias basado en el pais elejido en comboBox cboPais */
         $( document ).ready(function(){
                 $('#cboPais').change(function(){

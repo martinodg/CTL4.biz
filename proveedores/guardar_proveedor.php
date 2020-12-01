@@ -1,6 +1,6 @@
 <?
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
 
 $accion=$_POST["accion"];
 if (!isset($accion)) { $accion=$_GET["accion"]; }

@@ -20,8 +20,8 @@ function pon_prefijo(codfamilia,pref,nombre,precio,codarticulo) {
 
 </script>
 <? 
-include ("../conectar7.php");
-include ("../mysqli_result.php");
+require_once("../conectar7.php");
+require_once("../mysqli_result.php");
 $codproveedor=$_POST["codproveedor"];
 $familia=$_POST["cmbfamilia"];
 $referencia=$_POST["referencia"];

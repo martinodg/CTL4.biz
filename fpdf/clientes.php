@@ -2,7 +2,7 @@
 ob_start();
 define('FPDF_FONTPATH','font/');
 require ('mysqli_table.php');
-include ("../conectar7.php");  include ("../mysqli_result.php"); include ("comunes.php");
+require_once("../conectar7.php");  require_once("../mysqli_result.php"); require_once("comunes.php");
 $pdf=new PDF();
 $pdf->AddPage();
 //Nombre del Listado

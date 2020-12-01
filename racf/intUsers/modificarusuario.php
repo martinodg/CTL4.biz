@@ -30,7 +30,16 @@
 
         function modificausuario() {
             var status = $("#uActivo").prop('checked');
-            if (status == true) {var codstatus="4"}else{var codstatus="5"}
+            if (status == true) {
+                var codstatus="4";
+            }else{
+                if (usuario!='1') {
+                    var codstatus="5";
+                }else{
+                    alert("It is not possible to deactivate the CTL4.biz master user");
+                    var codstatus="4";
+                }
+            }
             //alert(codstatus);
             $.get( "guardarusuario.php" , { accion : 'modificar',
                                             name : document.getElementById('name').value,
@@ -199,7 +208,7 @@
                         </div>
                     </div>
                     <br> <br> <br>
-                    <div><span id="usuarioDesactivado" class="loginText">Desactivado </span><label class="switch"> <input type="checkbox" id="uActivo" name="uActivo" > <span class="slider round"></span> </label> <span id="usuarioActivo" class="loginText">Activo</span></div>
+                    <div><span id="usuarioDesactivado" class="loginText">Inactivo </span><label class="switch"> <input type="checkbox" id="uActivo" name="uActivo" > <span class="slider round"></span> </label> <span id="usuarioActivo" class="loginText">Activo</span></div>
 
                     <input type="hidden" id="language" name="language" value="0">
 

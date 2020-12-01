@@ -1,5 +1,5 @@
-<?php include ("../conectar7.php"); 
-include ("../mysqli_result.php");
+<?php require_once("../conectar7.php"); 
+require_once("../mysqli_result.php");
 
 $codfamilia=$_GET["codfamilia"];
 

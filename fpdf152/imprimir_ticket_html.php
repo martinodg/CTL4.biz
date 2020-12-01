@@ -1,6 +1,6 @@
 <?php
-include ("../conectar.php");
-include ("../funciones/fechas.php");
+require_once("../conectar.php");
+require_once("../funciones/fechas.php");
 $codfactura=$_GET["codfactura"];
 $pagado=$_GET["pagado"];
 $adevolver=$_GET["adevolver"];

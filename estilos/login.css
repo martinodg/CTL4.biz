@@ -367,7 +367,7 @@ body .password-wrapper .strength-lines .line:last-of-type {
     left: 0;
     right: 1;
     bottom: 0;
-    background-color: #ffffff;
+    background-color: #f8c6c6;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -385,7 +385,7 @@ body .password-wrapper .strength-lines .line:last-of-type {
 }
 
 input:checked+.slider {
-    background-color: #ffffff;
+    background-color: #c6face;
 }
 
 
@@ -492,4 +492,6 @@ input:checked+.slider:before {
     background: rgb(120, 131, 141);
     
   }
-  
+  .hiden {
+    display: none;
+}

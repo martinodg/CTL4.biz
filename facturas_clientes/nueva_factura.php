@@ -1,5 +1,5 @@
 <?php 
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
 
 $fechahoy=date("Y-m-d");
 $sel_fact="INSERT INTO facturastmp (codfactura,fecha) VALUE ('','$fechahoy')";

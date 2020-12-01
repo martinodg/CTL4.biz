@@ -5,8 +5,8 @@ header('Pragma: no-cache');
 <html>
 <head>
 </head>
-<? include ("../conectar7.php"); 
-include ("../funciones/fechas.php");
+<? require_once("../conectar7.php"); 
+require_once("../funciones/fechas.php");
 ?>
 <body>
 <?

@@ -2,6 +2,9 @@
 session_start();
 $language="spanish";
 $Busqueda="Busqueda de procesos";
+$id_resource='2';
+$id_sresource='6';
+require_once("../racf/purePhpVerify.php");
 /*SQL to reset autoincrement on sql -> ALTER TABLE procesos AUTO_INCREMENT = 0; */
 if ($language<>"spanish"){$Busqueda="Search for processes";}
 ?>
@@ -14,11 +17,14 @@ if ($language<>"spanish"){$Busqueda="Search for processes";}
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
-        <script type="text/javascript" src="../jquery/jquery331.js"></script>
         <script type="text/javascript" src="../funciones/paginar.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery331.js"></script>
+		 
+        
+        <script language="javascript">
+         
 
        
-        <script language="javascript">
            //---------------------------------------------------------------------------------------------------           
           
           //this function setup pagination and reload 

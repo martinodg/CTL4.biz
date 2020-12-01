@@ -1,5 +1,8 @@
-<?php 
-include ("../conectar7.php"); 
+<?
+require_once(__DIR__."/../conectar7.php"); 
+$id_resource='8';
+$id_sresource='30';
+require_once(__DIR__."/../racf/purePhpVerify.php");
 $hoy=date("d/m/Y");
 $hora=date("H:i:s");
 ?>

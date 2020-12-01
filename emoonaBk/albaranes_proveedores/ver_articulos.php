@@ -54,7 +54,7 @@ body {
 -->
 </style></head>
 <? 
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
 $codproveedor=$_GET["codproveedor"];
 ?>
 <body onLoad="buscar()">

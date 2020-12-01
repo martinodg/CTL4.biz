@@ -1,5 +1,8 @@
 <?php
-include ("../conectar.php");
+require_once("../conectar.php");
+$id_resource='6';
+$id_sresource='25';
+require_once("../racf/purePhpVerify.php");
 
 $cadena_busqueda=$_GET["cadena_busqueda"];
 
@@ -32,7 +35,11 @@ if ($cadena_busqueda<>"") {
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/lang/calendar-sp.js"></script>
 		<script type="text/JavaScript" language="javascript" src="../calendario/calendar-setup.js"></script>
-		<script language="javascript">
+		<script type="text/javascript" src="/jquery/jquery331.js"></script>
+		 
+        
+        <script language="javascript">
+         
 
 		function inicio() {
 			document.getElementById("form_busqueda").submit();

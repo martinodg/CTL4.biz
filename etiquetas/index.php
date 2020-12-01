@@ -1,12 +1,19 @@
 <?php 
-include ("../conectar7.php"); 
+require_once("../conectar7.php"); 
+$id_resource='7';
+$id_sresource='27';
+require_once("../racf/purePhpVerify.php");
 
 ?>
 <html>
 	<head>
 		<title>Principal</title>
 		<link href="../estilos/estilos.css" type="text/css" rel="stylesheet">
-		<script language="javascript">
+		<script type="text/javascript" src="/jquery/jquery331.js"></script>
+		 
+        
+        <script language="javascript">
+         
 		
 		function ventanaArticulos(){
 			miPopup = window.open("ver_articulos.php","miwin","width=700,height=500,scrollbars=yes");
